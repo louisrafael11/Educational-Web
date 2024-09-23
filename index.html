@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html{
+            scroll-behavior: smooth;
+            /* Width of the scrollbar */
+
+        }
+        /* Customize the width of the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Change this for thickness */
+}
+
+/* Track background */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb (the actual scrolling part) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Gives padding */
+}
+
+/* Scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker shade on hover */
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #001f3f;
+            color: white;
+        }
+        header {
+            background-color: #004080;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #003366;
+            position: relative;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: #003366;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #004080;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #0056b3;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        h2 {
+            color: #FFD700; /* Gold color */
+        }
+        .content-section {
+            margin: 20px;
+            padding: 15px;
+            background-color: #003366; /* Dark Blue */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text for the entire section */
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .carousel-images {
+            display: none;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 4px;
+            transform: translateY(-50%);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .toggle-info {
+            cursor: pointer;
+            color: #FFD700;
+        }
+        .hidden {
+            display: none;
+        }
+        .animated-icon {
+            animation: pulse 1.5s infinite;
+            margin-left: 10px; 
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .fact {
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Astronomy Education <i class="fas fa-star animated-icon"></i></h1>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#introduction">Introduction</a>
+                    <a href="#infographic">Infographic</a>
+                    <a href="#video">Watch & Learn</a>
+                    <a href="#facts">Fun Facts</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="introduction" class="content-section">
+            <h2>Understanding Astronomy</h2>
+            <p>Astronomy is the study of celestial objects, space, and the universe as a whole. It explores everything from planets and stars to galaxies and the cosmos.</p>
+            <p class="toggle-info" onclick="toggleInfo('astro-info')">Learn More</p>
+            <div id="astro-info" class="hidden">
+                <p>It is one of the oldest sciences, and understanding it helps us comprehend our place in the universe. From ancient civilizations to modern astrophysics, astronomy has always fascinated humanity.</p>
+                <p>Common topics include the solar system, black holes, and the Big Bang theory. Each topic has its unique wonders and complexities.</p>
+            </div>
+            <div class="animated-icon">🌌</div>
+        </section>
+
+        <section id="infographic" class="content-section">
+            <h2>Infographic</h2>
+            <div class="carousel">
+                <img src="./1.jpg" alt="Infographic Image 1" class="carousel-images">
+                <img src="./2.jpg" alt="Infographic Image 2" class="carousel-images">
+                <img src="./3.jpg" alt="Infographic Image 3" class="carousel-images">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="infographic-text">
+                <p>This infographic illustrates key facts and statistics about astronomy, including the vast distances between stars and the age of the universe.</p>
+                <p>It highlights the importance of telescopes and technology in our understanding of space.</p>
+            </div>
+        </section>
+        <section id="facts" class="content-section">
+            <h2>Fun Facts about Astronomy</h2>
+            
+            <div class="fact">
+                <h3>The Solar System</h3>
+                <img src="./image/1.gif" alt="Solar System GIF" style="width: 100%; border-radius: 8px;">
+                <p><strong>Fact:</strong> The solar system is about 4.6 billion years old and consists of eight planets, including Earth.</p>
+                <p><strong>Learn More:</strong> The planets are divided into terrestrial and gas giants, each with unique features.</p>
+            </div>
+            
+            <div class="fact">
+                <h3>Stars and Their Life Cycle</h3>
+                <img src="./image/slc.jpg" alt="Stars Life Cycle GIF" style="width: 100%; border-radius: 8px;">
+                <p><strong>Fact:</strong> Stars are born in nebulae, vast clouds of gas and dust in space.</p>
+                <p><strong>Learn More:</strong> After millions of years, a star goes through various stages, ending with either a supernova or a white dwarf.</p>
+            </div>
+            
+            <div class="fact">
+                <h3>Black Holes</h3>
+                <img src="./image/3.gif" alt="Black Holes GIF" style="width: 100%; border-radius: 8px;">
+                <p><strong>Fact:</strong> Black holes are regions in space where gravity is so strong that nothing can escape.</p>
+                <p><strong>Learn More:</strong> They form from the collapse of massive stars after they exhaust their nuclear fuel.</p>
+            </div>
+            
+            <div class="fact">
+                <h3>The Milky Way Galaxy</h3>
+                <img src="./image/milkyway.gif" alt="Milky Way GIF" style="width: 100%; border-radius: 8px;">
+                <p><strong>Fact:</strong> Our galaxy contains over 100 billion stars and measures about 100,000 light-years in diameter.</p>
+                <p><strong>Learn More:</strong> The Milky Way is home to various solar systems and cosmic phenomena.</p>
+            </div>
+            
+            <div class="fact">
+                <h3>The Expanding Universe</h3>
+                <img src="./image/expanding.gif" alt="Expanding Universe GIF" style="width: 100%; border-radius: 8px;">
+                <p><strong>Fact:</strong> The universe is continuously expanding, with galaxies moving away from us.</p>
+                <p><strong>Learn More:</strong> This expansion was discovered by Edwin Hubble in the 1920s, indicating a Big Bang origin.</p>
+            </div>
+        </section>
+        
+        
+        <section id="video" class="content-section">
+            <h2>Watch & Learn</h2>
+            <p>learn more about astronomy through this informative video:</p>
+            <p>Credits to the rightful owner.</p>
+            <a href="./image/SOLAR SYSTEM - The Dr. Binocs Show _ Best Learning Videos For Kids _ Peekaboo Kidz.mp4">
+                <button style="padding: 10px; background-color: #FFD700; color: black; border: none; border-radius: 5px; cursor: pointer;">Watch Video</button>
+            </a>
+        </section>
+         
+    </main>
+
+    <footer>
+        <p>Created by Louis Rafael Quiñones</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("carousel-images");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            slides[slideIndex - 1].style.display = "block";  
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+        }
+
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            info.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
